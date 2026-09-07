@@ -81,6 +81,10 @@ const App = () => {
             src="/profile.png" 
             alt="Osewa" 
             className="w-auto h-full object-contain object-bottom pointer-events-auto"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)'
+            }}
           />
         </div>
 
@@ -149,16 +153,20 @@ const App = () => {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           variants={staggerContainer}
           className="flex flex-col md:flex-row gap-16 items-start"
         >
-           <motion.div variants={fadeInUp} className="w-full md:w-5/12">
-             <div className="w-full aspect-[4/5] overflow-hidden rounded-3xl group relative">
+           <motion.div variants={fadeInUp} className="w-full md:w-5/12 flex justify-center items-end">
+             <div className="w-full aspect-[4/5] relative">
                 <img 
                   src="/profile.png" 
                   alt="About Developer" 
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105" 
+                  className="w-full h-full object-cover object-bottom filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" 
+                  style={{
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                    maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)'
+                  }}
                 />
              </div>
            </motion.div>
@@ -193,7 +201,7 @@ const App = () => {
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             variants={fadeInUp}
             className="mb-20"
           >
@@ -210,7 +218,7 @@ const App = () => {
                 <motion.div 
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: false, margin: "-50px" }}
                   variants={fadeInUp}
                   key={idx} 
                   onMouseEnter={() => setHoveredService(idx)}
@@ -272,7 +280,7 @@ const App = () => {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           variants={fadeInUp}
           className="flex flex-col lg:flex-row justify-between mb-24 lg:items-end gap-10"
         >
@@ -296,7 +304,7 @@ const App = () => {
                 key={project.id}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: false, margin: "-100px" }}
                 variants={fadeInUp}
                 className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center"
               >
@@ -347,7 +355,7 @@ const App = () => {
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             variants={fadeInUp}
             className="flex-1"
           >
@@ -381,7 +389,7 @@ const App = () => {
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             variants={fadeInUp}
             className="flex-1 mt-10 lg:mt-0"
           >
@@ -428,7 +436,7 @@ const App = () => {
           <motion.div 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
+             viewport={{ once: false }}
              transition={{ duration: 0.5 }}
              className="flex flex-wrap justify-center gap-8 mb-20 z-10 text-xs font-semibold tracking-[0.2em] uppercase text-white/60"
           >

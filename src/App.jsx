@@ -114,7 +114,29 @@ const App = () => {
            <motion.a 
              initial={{ opacity: 0, x: 50 }}
              animate={{ opacity: 1, x: 0 }}
-             transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+             transition={{ duration: 1, delay: 0.65, ease: "easeOut" }}
+             href="/cv-en.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="rounded-full border border-transparent px-8 py-3 text-sm font-bold bg-[#ccff00] text-black hover:bg-white transition-all shadow-[0_0_15px_rgba(204,255,0,0.3)]"
+           >
+              CV (ENG)
+           </motion.a>
+           <motion.a 
+             initial={{ opacity: 0, x: 50 }}
+             animate={{ opacity: 1, x: 0 }}
+             transition={{ duration: 1, delay: 0.75, ease: "easeOut" }}
+             href="/cv-id.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="rounded-full border border-white/20 px-8 py-3 text-sm font-bold text-white hover:border-white hover:bg-white hover:text-black transition-all"
+           >
+              CV (IND)
+           </motion.a>
+           <motion.a 
+             initial={{ opacity: 0, x: 50 }}
+             animate={{ opacity: 1, x: 0 }}
+             transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
              href="#contact"
              className="rounded-full border border-white/20 px-8 py-3 text-sm font-light hover:border-white hover:bg-white hover:text-black transition-all"
            >
@@ -140,6 +162,12 @@ const App = () => {
            >
              <a href="#work" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-[135deg]"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+             </a>
+             <a href="/cv-en.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-transparent bg-[#ccff00] text-black px-6 py-2 text-xs font-bold hover:bg-white transition-all shadow-[0_0_10px_rgba(204,255,0,0.3)]">
+                CV (EN)
+             </a>
+             <a href="/cv-id.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/20 text-white px-6 py-2 text-xs font-bold hover:bg-white hover:text-black transition-all">
+                CV (ID)
              </a>
              <a href="#contact" className="rounded-full border border-white/20 px-6 py-2 text-xs font-light hover:bg-white hover:text-black transition-all">
                 Contact

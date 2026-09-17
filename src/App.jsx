@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const App = () => {
@@ -59,7 +59,7 @@ const App = () => {
         <div className="hidden md:flex gap-8 text-[11px] font-medium tracking-[0.2em] text-white/70">
           <a href="#home" className="hover:text-white transition-colors">HOME</a>
           <a href="#about" className="hover:text-white transition-colors">ABOUT</a>
-          <a href="#services" className="hover:text-white transition-colors">SERVICE</a>
+          <a href="#services" className="hover:text-white transition-colors">SKILL</a>
           <a href="#work" className="hover:text-white transition-colors">PROJECT</a>
           <a href="#contact" className="hover:text-white transition-colors">CONTACT</a>
         </div>
@@ -234,8 +234,8 @@ const App = () => {
             className="mb-20"
           >
             <h2 className="text-5xl md:text-[80px] font-black uppercase tracking-tighter leading-none">
-              <span className="text-white block">WHAT WE</span> 
-              <span className="text-[#ccff00] block mt-2">CAN DO</span>
+              <span className="text-white">SKILL</span>{' '}
+              <span className="text-[#ccff00]">SAYA</span>
             </h2>
           </motion.div>
 
@@ -375,115 +375,165 @@ const App = () => {
         </div>
       </section>
 
-      {/* Get in Touch & Footer Section */}
-      <section id="contact" className="pt-32 border-t border-white/10 relative overflow-hidden bg-[#050505]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ccff00]/5 rounded-full blur-[120px] pointer-events-none"></div>
-        
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-20 mb-32">
-          <motion.div 
+      {/* Contact Section */}
+      <section id="contact" className="relative overflow-hidden bg-black" style={{minHeight:'100vh'}}>
+        {/* Spinning Globe - centered behind content */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none opacity-35" style={{width:'110vw', maxWidth:'1100px'}}>
+          <img
+            src="/globe.jpg"
+            alt="globe"
+            className="w-full h-auto object-contain animate-[spin_120s_linear_infinite]"
+            style={{filter:'brightness(0.7) contrast(1.1)'}}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 flex flex-col lg:flex-row gap-20 py-32">
+          {/* Left: Info */}
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, margin: "-100px" }}
             variants={fadeInUp}
-            className="flex-1"
+            className="w-full lg:w-5/12 flex flex-col justify-center"
           >
-            <h2 className="text-5xl md:text-[70px] font-black text-white tracking-tighter mb-8 uppercase leading-none">Let's <br/> <span className="text-white/40 italic font-serif lowercase text-6xl md:text-[80px]">talk</span></h2>
-            <p className="text-xl text-gray-400 font-light mb-16 max-w-md">
-              Got a project in mind, or just want to say hi? Feel free to send a message.
-            </p>
-            
+            <h2 className="text-[52px] md:text-[72px] font-black leading-[1.0] mb-16 text-white" style={{letterSpacing:'-0.02em'}}>Get in<br/>touch</h2>
+
             <div className="space-y-8">
-              <a href="mailto:hello@osewa.dev" className="flex items-center gap-6 group w-max">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#ccff00] group-hover:border-[#ccff00] group-hover:text-black transition-all duration-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <div>
+                <p className="text-white/40 text-xs tracking-widest uppercase mb-1 font-semibold">Email:</p>
+                <a href="mailto:pallyamasultan@gmail.com" className="text-white text-base font-medium hover:text-[#ccff00] transition-colors">
+                  pallyamasultan@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <p className="text-white/40 text-xs tracking-widest uppercase mb-1 font-semibold">Phone:</p>
+                <a href="tel:+62000000000" className="text-white text-base font-medium hover:text-[#ccff00] transition-colors">
+                  +62 000-000-0000
+                </a>
+              </div>
+
+              <div>
+                <p className="text-white/40 text-xs tracking-widest uppercase mb-3 font-semibold">Follow us</p>
+                <div className="flex gap-3">
+                  <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-white hover:text-black transition-all">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-white hover:text-black transition-all">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-white hover:text-black transition-all">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-white hover:text-black transition-all">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
                 </div>
-                <span className="text-xl font-light text-white/70 group-hover:text-[#ccff00] transition-colors">hello@osewa.dev</span>
-              </a>
-              <a href="#" className="flex items-center gap-6 group w-max">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#ccff00] group-hover:border-[#ccff00] group-hover:text-black transition-all duration-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </div>
-                <span className="text-xl font-light text-white/70 group-hover:text-[#ccff00] transition-colors">LinkedIn</span>
-              </a>
-              <a href="#" className="flex items-center gap-6 group w-max">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#ccff00] group-hover:border-[#ccff00] group-hover:text-black transition-all duration-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </div>
-                <span className="text-xl font-light text-white/70 group-hover:text-[#ccff00] transition-colors">GitHub</span>
-              </a>
+              </div>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          {/* Right: Form */}
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, margin: "-100px" }}
             variants={fadeInUp}
-            className="flex-1 mt-10 lg:mt-0"
+            className="w-full lg:w-7/12"
           >
-            <form className="flex flex-col gap-8 bg-[#0a0a0a] p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
-              <div className="relative">
-                <input 
-                  type="text" 
-                  id="name"
-                  placeholder=" " 
-                  className="peer block w-full bg-transparent border-b border-white/20 py-4 text-white text-lg focus:outline-none focus:border-[#ccff00] transition-colors placeholder-transparent"
-                />
-                <label htmlFor="name" className="absolute left-0 -top-3.5 text-white/40 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-[#ccff00] cursor-text">Your Name</label>
+            <form className="flex flex-col gap-5">
+              <div className="grid grid-cols-2 gap-5">
+                <div>
+                  <p className="text-white/60 text-xs mb-2 tracking-wide">Your Name</p>
+                  <input type="text" id="cname" placeholder="Your full name" className="w-full bg-[#0d0d0d] border border-white/10 rounded-md p-3 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/20" />
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs mb-2 tracking-wide">Email address</p>
+                  <input type="email" id="cemail" placeholder="Your email address" className="w-full bg-[#0d0d0d] border border-white/10 rounded-md p-3 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/20" />
+                </div>
               </div>
-              <div className="relative mt-4">
-                <input 
-                  type="email" 
-                  id="email"
-                  placeholder=" " 
-                  className="peer block w-full bg-transparent border-b border-white/20 py-4 text-white text-lg focus:outline-none focus:border-[#ccff00] transition-colors placeholder-transparent"
-                />
-                <label htmlFor="email" className="absolute left-0 -top-3.5 text-white/40 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-[#ccff00] cursor-text">Email Address</label>
+
+              <div className="grid grid-cols-2 gap-5">
+                <div>
+                  <p className="text-white/60 text-xs mb-2 tracking-wide">Phone</p>
+                  <input type="tel" id="cphone" placeholder="Your phone number" className="w-full bg-[#0d0d0d] border border-white/10 rounded-md p-3 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/20" />
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs mb-2 tracking-wide">Subject</p>
+                  <input type="text" id="csubject" placeholder="Subject" className="w-full bg-[#0d0d0d] border border-white/10 rounded-md p-3 text-white text-sm focus:outline-none focus:border-white/30 placeholder:text-white/20" />
+                </div>
               </div>
-              <div className="relative mt-4">
-                <textarea 
-                  id="message"
-                  placeholder=" " 
-                  rows="4"
-                  className="peer block w-full bg-transparent border-b border-white/20 py-4 text-white text-lg focus:outline-none focus:border-[#ccff00] transition-colors placeholder-transparent resize-none"
-                ></textarea>
-                <label htmlFor="message" className="absolute left-0 -top-3.5 text-white/40 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-[#ccff00] cursor-text">Message</label>
+
+              <div>
+                <p className="text-white/60 text-xs mb-2 tracking-wide">Message</p>
+                <textarea id="cmessage" rows="6" placeholder="Write something..." className="w-full bg-[#0d0d0d] border border-white/10 rounded-md p-3 text-white text-sm focus:outline-none focus:border-white/30 resize-none placeholder:text-white/20"></textarea>
               </div>
-              <button 
-                type="button" 
-                className="bg-white text-black font-bold py-5 rounded-full mt-6 text-sm tracking-widest uppercase hover:bg-[#ccff00] transition-colors duration-300 w-full hover:shadow-[0_0_30px_rgba(204,255,0,0.4)]"
-              >
+
+              <button type="button" className="w-full bg-white text-black font-semibold py-4 rounded-md text-sm hover:bg-[#ccff00] transition-colors duration-300 mt-1">
                 Send Message
               </button>
             </form>
           </motion.div>
         </div>
+      </section>
 
-        {/* Footer Bottom */}
-        <footer className="relative border-t border-white/10 pt-20 pb-10 overflow-hidden flex flex-col items-center">
-          <motion.div 
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: false }}
-             transition={{ duration: 0.5 }}
-             className="flex flex-wrap justify-center gap-8 mb-20 z-10 text-xs font-semibold tracking-[0.2em] uppercase text-white/60"
-          >
-            <a href="#home" className="hover:text-[#ccff00] transition-colors">Home</a>
-            <a href="#about" className="hover:text-[#ccff00] transition-colors">About</a>
-            <a href="#services" className="hover:text-[#ccff00] transition-colors">Services</a>
-            <a href="#work" className="hover:text-[#ccff00] transition-colors">Project</a>
-            <a href="#contact" className="hover:text-[#ccff00] transition-colors">Contact</a>
-          </motion.div>
-          
-          <h1 className="text-[22vw] font-black text-white/[0.03] leading-none tracking-tighter select-none pointer-events-none z-0 mt-[-8vw]">
+      {/* Footer */}
+      <footer className="relative overflow-hidden bg-black pt-16 pb-10">
+        {/* Green glow bottom */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#00ff44]/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16">
+          {/* Top row: email left, CTA right */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-10 border-b border-white/10 pb-10">
+            <div>
+              <p className="text-white/50 text-sm mb-2">Connect with me</p>
+              <a href="mailto:pallyamasultan@gmail.com" className="text-3xl md:text-4xl font-bold text-white hover:text-[#ccff00] transition-colors">
+                pallyamasultan@gmail.com
+              </a>
+            </div>
+            <div className="text-left lg:text-right">
+              <p className="text-white font-bold text-lg mb-1">Let's build something</p>
+              <p className="text-white/50 text-sm mb-4">Open for freelance opportunities and<br/>collaborations.</p>
+              <a href="#contact" className="inline-block px-6 py-3 rounded-full border border-white text-white text-sm font-medium hover:bg-white hover:text-black transition-all">
+                Get in touch
+              </a>
+            </div>
+          </div>
+
+          {/* Nav links */}
+          <div className="flex gap-8 mb-10 text-sm text-white/60">
+            <a href="#home" className="hover:text-white transition-colors">Home</a>
+            <a href="#about" className="hover:text-white transition-colors">About</a>
+            <a href="#services" className="hover:text-white transition-colors">Services</a>
+            <a href="#work" className="hover:text-white transition-colors">Projects</a>
+          </div>
+
+          {/* Social links */}
+          <div className="flex justify-between items-center mb-4 text-sm text-white/70 border-b border-white/10 pb-10">
+            <a href="#" className="hover:text-white transition-colors">Instagram</a>
+            <a href="#" className="hover:text-white transition-colors">Youtube</a>
+            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="#" className="hover:text-white transition-colors">Github</a>
+          </div>
+        </div>
+
+        {/* Big name */}
+        <div className="relative z-10 text-center overflow-hidden">
+          <h1 className="text-[18vw] md:text-[16vw] font-black text-white leading-none tracking-tighter select-none" style={{WebkitTextStroke:'1px rgba(255,255,255,0.15)', color:'transparent'}}>
             OSEWA
           </h1>
-          
-          <div className="absolute bottom-6 text-center text-white/30 text-xs tracking-widest uppercase z-10 w-full">
-            &copy; {new Date().getFullYear()} Osewa. All rights reserved.
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center text-white/30 text-xs mt-4">
+          <p>&copy; {new Date().getFullYear()} Osewa. All Rights Reserved.</p>
+          <div className="flex gap-6 mt-2 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Privacy policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms and conditions</a>
           </div>
-        </footer>
-      </section>
+        </div>
+      </footer>
     </div>
   );
 };

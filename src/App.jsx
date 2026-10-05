@@ -16,20 +16,24 @@ const App = () => {
     {
       id: '01',
       title: 'NIMEXX APP - STREAMING ANIME',
-      desc: 'Nimexx adalah aplikasi yang dirancang untuk menonton anime secara gratis yang dikembangkan oleh tim IT menggunakan API untuk katalog dan pemutaran. Fitur utama meliputi streaming berbasis web, daftar favorit, autentikasi pengguna, dan integrasi Firebase untuk penyimpanan preferensi dan data pengguna.',
-      image: '/nimexx.png',
+      desc: 'Nimexx adalah aplikasi streaming anime gratis berbasis web & mobile. Menghadirkan katalog lengkap via API, pemutaran streaming langsung, daftar favorit pengguna, dan integrasi Firebase untuk otentikasi serta penyimpanan preferensi akun.',
+      tech: ['Flutter', 'Dart', 'Firebase', 'REST API'],
+      image: '/nimexxbaner.webp',
+      imageBg: 'bg-black',
+      imageFit: 'object-cover',
+      liveUrl: '#',
+      githubUrl: 'https://github.com/pallyamasultan'
     },
     {
       id: '02',
-      title: 'LIVEMEET TRANSLATE',
-      desc: 'A real-time AI-powered Google Meet translation platform that listens to live conversations, converts speech to text, translates it into the user\'s preferred language, and automatically generates organized meeting notes with AI-powered summaries and key action items.',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      id: '03',
-      title: 'FEB UNSAP EXAM APP',
-      desc: 'A robust web-based online exam application developed for the Faculty of Economics and Business, UNSAP. It features real-time progress tracking, secure testing environments, and an advanced dashboard for administrators.',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop',
+      title: 'SIPENA FEB - EXAM & ACADEMIC APP',
+      desc: 'SiPENA FEB adalah platform evaluasi akademik dan ujian online terpadu yang dikembangkan untuk Fakultas Ekonomi dan Bisnis (FEB) UNSAP. Dilengkapi fitur monitoring progress ujian real-time, lingkungan tes yang aman, dan dashboard analitik komprehensif.',
+      tech: ['React', 'JavaScript', 'Tailwind CSS', 'Node.js'],
+      image: '/sipenafeb.jpeg',
+      imageBg: 'bg-white',
+      imageFit: 'object-contain p-6 md:p-10',
+      liveUrl: '#',
+      githubUrl: 'https://github.com/pallyamasultan'
     }
   ];
 
@@ -336,84 +340,58 @@ const App = () => {
                 variants={fadeInUp}
                 className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center"
               >
-                {project.id === '01' ? (
-                  <>
-                    <div className={`w-full lg:w-1/2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                      <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden relative shadow-2xl bg-gradient-to-br from-[#0b1020] via-[#31143a] to-[#0b1020]">
-                        <img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover mix-blend-overlay opacity-70"
-                        />
-                        <div className="absolute inset-0 p-8 flex items-center">
-                          <div className="max-w-md text-white">
-                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#7c3aed] text-white font-black text-xl mb-4 shadow-lg">N</div>
-                            <h3 className="text-5xl font-black mb-2 tracking-tight">Nimexx</h3>
-                            <p className="text-gray-200 mb-4 leading-relaxed">Aplikasi streaming anime gratis berbasis web — katalog via API, pemutaran langsung, daftar favorit, dan autentikasi pengguna. Integrasi Firebase untuk penyimpanan preferensi dan data pengguna.</p>
-                            <div className="mt-4 text-sm text-[#d9b2ff] font-semibold">Tumpukan Teknologi: <span className="text-white font-bold">Flutter, Dart, Firebase</span></div>
-                          </div>
-                        </div>
-                        <div className="absolute bottom-6 left-6">
-                          <a href="#" className="inline-flex items-center gap-2 bg-[#ccff00] text-black px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white transition-colors duration-300 shadow">Live Demo</a>
-                        </div>
-                      </div>
-                    </div>
+                {/* Image Section */}
+                <div className={`w-full lg:w-1/2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className={`w-full aspect-[16/9] rounded-3xl overflow-hidden relative group shadow-2xl border border-white/10 ${project.imageBg || 'bg-[#0d0d0d]'} flex items-center justify-center`}>
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className={`w-full h-full ${project.imageFit || 'object-cover'} transition-all duration-700 group-hover:scale-105`} 
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+                  </div>
+                </div>
 
-                    <div className={`w-full lg:w-1/2 flex flex-col justify-center ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                      <span className="text-[#ccff00] font-mono text-sm mb-6 block font-bold">{project.id}</span>
-                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-400 font-light mb-12 text-lg leading-relaxed max-w-xl">
-                        {project.desc}
-                      </p>
-                      <div className="flex gap-4 flex-wrap">
-                        <a href="#" className="inline-flex items-center justify-center gap-2 bg-transparent border border-white/20 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors duration-300">
-                          Learn More
-                        </a>
-                        <a href="#" className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors duration-300">
-                          GitHub
-                        </a>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    {/* Image Section */}
-                    <div className={`w-full lg:w-1/2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                      <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden relative group shadow-2xl">
-                        <img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
-                        />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-                      </div>
-                    </div>
+                {/* Text Section */}
+                <div className={`w-full lg:w-1/2 flex flex-col justify-center ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <span className="text-[#ccff00] font-mono text-sm mb-4 block font-bold">{project.id}</span>
+                  <h3 className="text-3xl md:text-5xl lg:text-5xl font-black text-white mb-6 leading-[1.15] tracking-tight uppercase">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 font-light mb-6 text-base md:text-lg leading-relaxed max-w-xl">
+                    {project.desc}
+                  </p>
 
-                    {/* Text Section */}
-                    <div className={`w-full lg:w-1/2 flex flex-col justify-center ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                      <span className="text-[#ccff00] font-mono text-sm mb-6 block font-bold">{project.id}</span>
-                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-400 font-light mb-12 text-lg leading-relaxed max-w-xl">
-                        {project.desc}
-                      </p>
-                      
-                      <div className="flex gap-4 flex-wrap">
-                        <a href="#" className="inline-flex items-center justify-center gap-2 bg-[#ccff00] text-black px-8 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white transition-colors duration-300">
-                          Live Demo 
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="-rotate-45"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </a>
-                        <a href="#" className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors duration-300">
-                          GitHub 
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </a>
-                      </div>
+                  {/* Tech stack pills */}
+                  {project.tech && (
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.tech.map((t) => (
+                        <span key={t} className="text-xs font-mono font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/80">
+                          {t}
+                        </span>
+                      ))}
                     </div>
-                  </>
-                )}
+                  )}
+                  
+                  <div className="flex gap-4 flex-wrap">
+                    <a 
+                      href={project.liveUrl || '#'} 
+                      className="inline-flex items-center justify-center gap-2 bg-[#ccff00] text-black px-8 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white transition-colors duration-300 shadow-[0_0_15px_rgba(204,255,0,0.2)]"
+                    >
+                      Live Demo 
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="-rotate-45"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a 
+                      href={project.githubUrl || 'https://github.com/pallyamasultan'} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-colors duration-300"
+                    >
+                      GitHub 
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             );
           })}
